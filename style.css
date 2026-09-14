@@ -1,4 +1,4 @@
-  :root{
+:root{
     --bg: #05100c;
     --window: #0a1512;
     --panel: #0f1c18;
@@ -112,7 +112,18 @@
     background:transparent; border:none; margin-left:.7rem;
     cursor:pointer;
   }
-  #soundToggle{ font-size:.9rem; }
+  /* três botõezinhos PT/EN/ES lado a lado, mesma pegada visual do theme-toggle */
+  .lang-switch{
+    display:flex; gap:2px; margin-left:.7rem;
+    border:1px solid var(--border); border-radius:6px; overflow:hidden;
+  }
+  .lang-btn{
+    font-family:var(--mono); font-size:.62rem; letter-spacing:.03em;
+    padding:.2rem .4rem; background:transparent; border:none;
+    color:var(--text-dim); cursor:pointer; transition:background .15s, color .15s;
+  }
+  .lang-btn:hover{ color:var(--text); }
+  .lang-btn.active{ background:var(--cyan); color:var(--bg); font-weight:600; }
   .theme-switch{
     position:relative; width:34px; height:18px;
     border-radius:20px; border:1px solid var(--border);
@@ -274,7 +285,7 @@
 
   /* ---------- sobre pane ---------- */
   .about-grid{ display:grid; grid-template-columns: 1.3fr 1fr; gap:2.5rem; }
-  .about-grid p{ color:var(--text-dim); margin-bottom:1rem; max-width:60ch; }
+  .about-grid p{ color:var(--text-dim); margin-bottom:1rem; max-width:60ch; text-align:justify; text-justify:inter-word; }
 
   .edu-card{ border:1px solid var(--border-soft); background:var(--panel); border-radius:8px; padding:1.1rem 1.2rem; margin-bottom:.9rem; }
   .edu-card .school{ font-weight:600; font-size:.95rem; }
